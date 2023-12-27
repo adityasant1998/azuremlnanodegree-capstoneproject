@@ -39,15 +39,105 @@ In summary, AutoML simplifies model building by automating tedious tasks and off
 
 Here are the screenshots of steps that I took to use AutoML in Azure ML studio:
 
-![]()
+![automl configuration](https://github.com/adityasant1998/azuremlnanodegree-capstoneproject/blob/49ee367ae2f9eebc466de82eb8dfcec0dd7cecb7/screenshots/1.automl%20configuration.jpg)
+
+![automl rundetails](https://github.com/adityasant1998/azuremlnanodegree-capstoneproject/blob/49ee367ae2f9eebc466de82eb8dfcec0dd7cecb7/screenshots/2.automl%20rundetails.jpg)
+
+![automl rundetails 2](https://github.com/adityasant1998/azuremlnanodegree-capstoneproject/blob/49ee367ae2f9eebc466de82eb8dfcec0dd7cecb7/screenshots/3.automl%20rundetails%202.jpg)
+
+![automl best model accuracy](https://github.com/adityasant1998/azuremlnanodegree-capstoneproject/blob/49ee367ae2f9eebc466de82eb8dfcec0dd7cecb7/screenshots/4.automl%20best%20model%20accuracy.jpg)
+
+![automl best run](https://github.com/adityasant1998/azuremlnanodegree-capstoneproject/blob/49ee367ae2f9eebc466de82eb8dfcec0dd7cecb7/screenshots/5.automl%20best%20run.jpg)
+
+![automl completion](https://github.com/adityasant1998/azuremlnanodegree-capstoneproject/blob/358aa9ba2cc90365db400763f8f6dec7b08114cf/screenshots/6.automl%20completion.jpg)
+
+### Results
+
+![data guardrails](https://github.com/adityasant1998/azuremlnanodegree-capstoneproject/blob/358aa9ba2cc90365db400763f8f6dec7b08114cf/screenshots/7.data%20guardrails.jpg)
+
+![Auto ML Rundetails model comparison](https://github.com/adityasant1998/azuremlnanodegree-capstoneproject/blob/358aa9ba2cc90365db400763f8f6dec7b08114cf/screenshots/8.Auto%20ML%20Rundetails%20model%20comparison.jpg)
+
+![model performance](https://github.com/adityasant1998/azuremlnanodegree-capstoneproject/blob/358aa9ba2cc90365db400763f8f6dec7b08114cf/screenshots/9.model%20performance.jpg)
+
+![dataset explorer](https://github.com/adityasant1998/azuremlnanodegree-capstoneproject/blob/358aa9ba2cc90365db400763f8f6dec7b08114cf/screenshots/10.dataset%20explorer.jpg)
+
+![aggregate feature importance](https://github.com/adityasant1998/azuremlnanodegree-capstoneproject/blob/358aa9ba2cc90365db400763f8f6dec7b08114cf/screenshots/11.aggregate%20feature%20importance.jpg)
+
+![metrics](https://github.com/adityasant1998/azuremlnanodegree-capstoneproject/blob/358aa9ba2cc90365db400763f8f6dec7b08114cf/screenshots/12.metrics.jpg)
+
+![metrics](https://github.com/adityasant1998/azuremlnanodegree-capstoneproject/blob/358aa9ba2cc90365db400763f8f6dec7b08114cf/screenshots/13.metrics.jpg)
+
+![metrics](https://github.com/adityasant1998/azuremlnanodegree-capstoneproject/blob/358aa9ba2cc90365db400763f8f6dec7b08114cf/screenshots/14.metrics.jpg)
+
+
 
 ## Hyperparameter Tuning Approach and Results
 
+Data Acquisition and Preparation:
+
+The heart failure dataset is fetched from a public GitHub repository using TabularDatasetFactory.
+It's split into training (70%) and testing (30%) sets for model development and evaluation.
+Model Selection and Training:
+
+Logistic regression, a popular classification algorithm, is chosen for predicting heart failure outcomes.
+The training script train.py is used to train the model with hyperparameter tuning via HyperDrive.
+HyperDrive Configuration:
+
+The workspace, experiment, and cluster are set up in Azure Machine Learning.
+Bandit policy is applied to optimize resource usage by terminating underperforming runs.
+Random sampling explores different combinations of hyperparameters:
+Inverse of regularization parameter (C): (0.1, 1)
+Maximum number of iterations (max_iter): (50, 100, 150, 200)
+The goal is to maximize accuracy, with a maximum of 10 total runs and 4 concurrent runs.
+Experiment Execution and Visualization:
+
+The experiment is submitted and visualized using the RunDetails widget.
+Upon completion, the best model is saved in the output folder and registered for future use.
+
+Here are the screenshots of steps that I took to use Hyperparameter Tuning Approach in Azure ML studio:
+
+![hyperdrive configuration](https://github.com/adityasant1998/azuremlnanodegree-capstoneproject/blob/358aa9ba2cc90365db400763f8f6dec7b08114cf/screenshots/15.hyperdrive%20configuration.jpg)
+
+![hyperdrive run](https://github.com/adityasant1998/azuremlnanodegree-capstoneproject/blob/358aa9ba2cc90365db400763f8f6dec7b08114cf/screenshots/16.hyperdrive%20run.jpg)
+
+![hyperdrive run_id](https://github.com/adityasant1998/azuremlnanodegree-capstoneproject/blob/358aa9ba2cc90365db400763f8f6dec7b08114cf/screenshots/17.hyperdrive%20run_id.jpg)
+
+### Result
+
+![hyperdrive best model accuracy](https://github.com/adityasant1998/azuremlnanodegree-capstoneproject/blob/358aa9ba2cc90365db400763f8f6dec7b08114cf/screenshots/18.hyperdrive%20best%20model%20accuracy.jpg)
 
 
 ## Model Deployment
-*TODO*: Give an overview of the deployed model and instructions on how to query the endpoint with a sample input.
+
+AutoML outperformed HyperDrive in terms of accuracy, achieving a best run accuracy of 87.63% compared to HyperDrive's 75.75%.
+AutoML's best model was deployed to ensure optimal performance in real-world applications.
+Deployment process:
+
+Model Registration and Download:
+
+The best AutoML model was selected and registered for deployment.
+Necessary files associated with the model were downloaded for the deployment process.
+Environment and Inference Creation:
+
+An environment was set up with the required conda dependencies to support model execution.
+A score.py script was included, defining initialization and exit functions for the model.
+This environment served as the foundation for inference (prediction generation).
+Deployment with Azure Container Instance:
+
+The model and its environment were deployed using Azure Container Instance (ACI), a flexible and scalable containerization service.
+Resources were allocated with 1 CPU core and 1 GB of memory to accommodate model execution.
+Monitoring and Verification:
+
+Application Insights was enabled to monitor the deployed model's performance and health.
+The service's state was verified to ensure successful deployment and readiness for use.
+Conclusion:
+
+By following these steps, the AutoML model with the highest accuracy was successfully deployed, ready to make predictions and deliver value in the real world.
+
+![model deployment](https://github.com/adityasant1998/azuremlnanodegree-capstoneproject/blob/358aa9ba2cc90365db400763f8f6dec7b08114cf/screenshots/19.model%20deployment.jpg)
+
+![pipeline testing](https://github.com/adityasant1998/azuremlnanodegree-capstoneproject/blob/2c479a64c21efd64225fc71580620e3ea8a23363/screenshots/20.pipeline%20testing.jpg)
 
 ## Screen Recording
 
-
+The screen recording can be accessed from the following link : https://drive.google.com/file/d/1yBbH6BEeuYApoB0_A54PGJcCNxOEsdYL/view?usp=sharing
