@@ -3,16 +3,30 @@
 This project is part of the Udacity Azure ML Nanodegree. The Heart Failure Clinical Records Dataset is used to train a machine learning model that predicts mortality by heart failure. The model is developed using Hyper Drive and Auto ML methods, and the model with the highest accuracy is retrieved (voting ensemble in this case) and deployed in the cloud with Azure Container Instances (ACI) as a webservice, with authentication enabled. Once the model is deployed, the endpoint’s behavior is analyzed by getting a response from the service and logs are retrieved at the end. 
 ## Dataset
 
+
 ### Overview
 This Dataset is available publicy in https://www.kaggle.com/datasets/andrewmvd/heart-failure-clinical-data
 The dataset is publicly available on Kaggle. Cardiovascular diseases (CVDs) are the number 1 cause of death globally, taking an estimated 17.9 million lives each year, which accounts for 31% of all deaths worldwide. Most cardiovascular diseases can be prevented by addressing behavioral risk factors such as tobacco use, unhealthy diet and obesity, physical inactivity, and harmful use of alcohol using population-wide strategies. People with cardiovascular disease or who are at high cardiovascular risk (due to the presence of one or more risk factors such as hypertension, diabetes, hyperlipidemia, or already established disease) need early detection and management wherein a machine learning model can be of great help. 
 
-### Task
+### Aim
 The task of this project is to train a model to predict whether the person with cardiovascular disease will survive or not. To access the dataset, two different methods were used for two different models.
+
+### Impact and Significance
+People with cardiovascular disease or who are at high cardiovascular risk (due to the presence of one or more risk factors such as hypertension, diabetes, hyperlipidaemia or already established disease) need early detection and management wherein a machine learning model can be of great help
 
 ### Access
 For HyperDrive Approach: Dataset from a public repository, loaded with TabularDataset.
 For AutoML Approach: Dataset registered from local files, loaded from Azure workspace.
+
+## Data 
+The data contains 299 records of the below mentioned attributes:
+
+![](https://github.com/adityasant1998/azuremlnanodegree-capstoneproject/blob/b4be3055ebbf256e251f9d28c974c8f69ede1587/additional_screenshots/data%20exploration.jpg)
+
+
+
+
+
 
 ## Automated ML Approach and Results
 Tired of manually tweaking machine learning models? Say hello to AutoML: your shortcut to automated model development! AutoML takes the pain out of repetitive tasks, letting Azure Machine Learning train and optimize models based on your desired metric.
@@ -113,6 +127,10 @@ AutoML outperformed HyperDrive in terms of accuracy, achieving a best run accura
 AutoML's best model was deployed to ensure optimal performance in real-world applications.
 Deployment process:
 
+### Environment Details
+
+I have created a custom mlvenv.yml file as shown below, I have pasted this is the default directory of my workspace (./mlvenv.yml)
+
 Model Registration and Download:
 
 The best AutoML model was selected and registered for deployment.
@@ -133,6 +151,10 @@ The service's state was verified to ensure successful deployment and readiness f
 Conclusion:
 
 By following these steps, the AutoML model with the highest accuracy was successfully deployed, ready to make predictions and deliver value in the real world.
+
+## Model Deployment 
+
+Demo of model deployment : https://drive.google.com/file/d/1k1wi2BsmIyk0KqbzSzf4l64VJnJPeP6P/view?usp=sharing
 
 ![model deployment](https://github.com/adityasant1998/azuremlnanodegree-capstoneproject/blob/358aa9ba2cc90365db400763f8f6dec7b08114cf/screenshots/19.model%20deployment.jpg)
 
