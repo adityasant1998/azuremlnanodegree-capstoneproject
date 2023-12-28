@@ -170,11 +170,6 @@ This enables automatic featurization, which means Azure AutoML will handle featu
 
 ![automl rundetails 2](https://github.com/adityasant1998/azuremlnanodegree-capstoneproject/blob/49ee367ae2f9eebc466de82eb8dfcec0dd7cecb7/screenshots/3.automl%20rundetails%202.jpg)
 
-![automl best model accuracy](https://github.com/adityasant1998/azuremlnanodegree-capstoneproject/blob/49ee367ae2f9eebc466de82eb8dfcec0dd7cecb7/screenshots/4.automl%20best%20model%20accuracy.jpg)
-
-![automl best run](https://github.com/adityasant1998/azuremlnanodegree-capstoneproject/blob/49ee367ae2f9eebc466de82eb8dfcec0dd7cecb7/screenshots/5.automl%20best%20run.jpg)
-
-![automl completion](https://github.com/adityasant1998/azuremlnanodegree-capstoneproject/blob/358aa9ba2cc90365db400763f8f6dec7b08114cf/screenshots/6.automl%20completion.jpg)
 
 ### Results
 
