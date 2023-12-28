@@ -173,21 +173,7 @@ This enables automatic featurization, which means Azure AutoML will handle featu
 
 ### Results
 
-![data guardrails](https://github.com/adityasant1998/azuremlnanodegree-capstoneproject/blob/358aa9ba2cc90365db400763f8f6dec7b08114cf/screenshots/7.data%20guardrails.jpg)
 
-![Auto ML Rundetails model comparison](https://github.com/adityasant1998/azuremlnanodegree-capstoneproject/blob/358aa9ba2cc90365db400763f8f6dec7b08114cf/screenshots/8.Auto%20ML%20Rundetails%20model%20comparison.jpg)
-
-![model performance](https://github.com/adityasant1998/azuremlnanodegree-capstoneproject/blob/358aa9ba2cc90365db400763f8f6dec7b08114cf/screenshots/9.model%20performance.jpg)
-
-![dataset explorer](https://github.com/adityasant1998/azuremlnanodegree-capstoneproject/blob/358aa9ba2cc90365db400763f8f6dec7b08114cf/screenshots/10.dataset%20explorer.jpg)
-
-![aggregate feature importance](https://github.com/adityasant1998/azuremlnanodegree-capstoneproject/blob/358aa9ba2cc90365db400763f8f6dec7b08114cf/screenshots/11.aggregate%20feature%20importance.jpg)
-
-![metrics](https://github.com/adityasant1998/azuremlnanodegree-capstoneproject/blob/358aa9ba2cc90365db400763f8f6dec7b08114cf/screenshots/12.metrics.jpg)
-
-![metrics](https://github.com/adityasant1998/azuremlnanodegree-capstoneproject/blob/358aa9ba2cc90365db400763f8f6dec7b08114cf/screenshots/13.metrics.jpg)
-
-![metrics](https://github.com/adityasant1998/azuremlnanodegree-capstoneproject/blob/358aa9ba2cc90365db400763f8f6dec7b08114cf/screenshots/14.metrics.jpg)
 
 ### Top Models Overview :
 
