@@ -26,7 +26,8 @@ The data contains 299 records of the below mentioned attributes:
 ![](https://github.com/adityasant1998/azuremlnanodegree-capstoneproject/blob/f08569237a3fba3b0b28f4025eec27ddd40c332f/additional_screenshots/data%20exploration%20ui.jpg)
 
 
-Understanding Features
+Understanding Features:
+
 1. age: displays the age of the individual.
 
 2. sex: displays the gender of the individual using the following format :
@@ -142,7 +143,8 @@ Here are the screenshots of steps that I took to use AutoML in Azure ML studio:
 
 ![automl configuration](https://github.com/adityasant1998/azuremlnanodegree-capstoneproject/blob/49ee367ae2f9eebc466de82eb8dfcec0dd7cecb7/screenshots/1.automl%20configuration.jpg)
 
-1. experiment_timeout_minutes: 30
+#### Config Explanation:
+experiment_timeout_minutes: 30
 
 This sets a time limit of 30 minutes for the experiment to run. After this duration, the experiment will stop, even if it hasn't fully completed.
 2. task: 'classification'
