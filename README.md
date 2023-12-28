@@ -25,6 +25,7 @@ The data contains 299 records of the below mentioned attributes:
 
 ![](https://github.com/adityasant1998/azuremlnanodegree-capstoneproject/blob/f08569237a3fba3b0b28f4025eec27ddd40c332f/additional_screenshots/data%20exploration%20ui.jpg)
 
+
 Understanding Features
 1. age: displays the age of the individual.
 
@@ -166,14 +167,11 @@ This controls the maximum number of iterations (model training attempts) that ca
 
 This enables automatic featurization, which means Azure AutoML will handle feature engineering for you. It will analyze the data and create appropriate features for the models to use.
 
+###  Rundetails and Output of AutoML Model : 
+
 ![automl rundetails](https://github.com/adityasant1998/azuremlnanodegree-capstoneproject/blob/49ee367ae2f9eebc466de82eb8dfcec0dd7cecb7/screenshots/2.automl%20rundetails.jpg)
 
-![automl rundetails 2](https://github.com/adityasant1998/azuremlnanodegree-capstoneproject/blob/49ee367ae2f9eebc466de82eb8dfcec0dd7cecb7/screenshots/3.automl%20rundetails%202.jpg)
-
-
-### Results
-
-
+![](https://github.com/adityasant1998/azuremlnanodegree-capstoneproject/blob/2762e97c4347650b681a402625ba2977a7e52494/additional_screenshots/output%20of%20automl.jpg)
 
 ### Top Models Overview :
 
@@ -315,6 +313,20 @@ Deployment process:
 
 I have created a custom mlvenv.yml file as shown below, I have pasted this is the default directory of my workspace (./mlvenv.yml)
 
+![](https://github.com/adityasant1998/azuremlnanodegree-capstoneproject/blob/0a3068173a41f9e16c3b2e5883bac93ccd523cd8/additional_screenshots/mlvenv.jpg)
+
+Used in Hyperdrive approach (code in notebook):
+
+estimator = SKLearn(source_directory = '.', compute_target=cpu_cluster_name, entry_script='train.py', conda_dependencies_file = './mlvenv.yml')
+
+AutoML Approach:
+
+Used : Python 3.8 AzureML for notebook
+
+But for deployment used in following code in notebook :
+
+env = Environment.from_conda_specification('mlvenv', './mlvenv.yml')
+
 Model Registration and Download:
 
 The best AutoML model was selected and registered for deployment.
@@ -336,14 +348,26 @@ Conclusion:
 
 By following these steps, the AutoML model with the highest accuracy was successfully deployed, ready to make predictions and deliver value in the real world.
 
-## Model Deployment 
+## Model Deployment through SDK:
 
 Demo of model deployment : https://drive.google.com/file/d/1k1wi2BsmIyk0KqbzSzf4l64VJnJPeP6P/view?usp=sharing
 
 ![model deployment](https://github.com/adityasant1998/azuremlnanodegree-capstoneproject/blob/358aa9ba2cc90365db400763f8f6dec7b08114cf/screenshots/19.model%20deployment.jpg)
 
+These steps are done in below screenshot : 
+Prepare a sample input data (JSON or another format as required by your model).
+Use the requests library to send an HTTP POST request to your model's endpoint.
+Display the response from the model to confirm it's receiving and processing input as expected.
 ![pipeline testing](https://github.com/adityasant1998/azuremlnanodegree-capstoneproject/blob/2c479a64c21efd64225fc71580620e3ea8a23363/screenshots/20.pipeline%20testing.jpg)
 
-## Screen Recording
+## Model Deployment through UI:
+
+Select best model and select deploy:
+
+![](https://github.com/adityasant1998/azuremlnanodegree-capstoneproject/blob/0a3068173a41f9e16c3b2e5883bac93ccd523cd8/additional_screenshots/deployment%20using%20webui1.jpg)
+
+![](https://github.com/adityasant1998/azuremlnanodegree-capstoneproject/blob/0a3068173a41f9e16c3b2e5883bac93ccd523cd8/additional_screenshots/deployment%20using%20webui2.jpg)
+
+## Screen Recording of full project
 
 The screen recording can be accessed from the following link : https://drive.google.com/file/d/1yBbH6BEeuYApoB0_A54PGJcCNxOEsdYL/view?usp=sharing
