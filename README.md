@@ -147,24 +147,31 @@ Here are the screenshots of steps that I took to use AutoML in Azure ML studio:
 experiment_timeout_minutes: 30
 
 This sets a time limit of 30 minutes for the experiment to run. After this duration, the experiment will stop, even if it hasn't fully completed.
+
 2. task: 'classification'
 
 This specifies the type of machine learning task. In this case, it's a classification task, meaning the model will aim to predict a category or class for each data point.
+
 3. primary_metric: 'accuracy'
 
 This determines the main metric that will be used to evaluate and compare different models during the experiment. Here, accuracy will be used, which measures the proportion of correct predictions made by the model.
+
 4. training_data: dataset
 
 This references the dataset that will be used to train the machine learning models. The 'dataset' variable likely holds the actual dataset you've prepared for training.
+
 5. label_column_name: 'DEATH_EVENT'
 
 This identifies the column in the dataset that contains the target values or labels that the model will try to predict. The model will learn to associate patterns in other columns with the values in this 'DEATH_EVENT' column.
+
 6. n_cross_validations: 5
 
 This sets the number of cross-validation folds to use during training. Cross-validation helps assess model performance and prevent overfitting. Using 5 folds means the dataset will be split into 5 parts, and the model will be trained and evaluated 5 times, each time using a different part for evaluation.
+
 7. max_concurrent_iterations: 4
 
 This controls the maximum number of iterations (model training attempts) that can run concurrently. Allowing for 4 concurrent iterations can potentially speed up the experiment.
+
 8. featurization: 'auto'
 
 This enables automatic featurization, which means Azure AutoML will handle feature engineering for you. It will analyze the data and create appropriate features for the models to use.
@@ -204,19 +211,24 @@ Here are several factors that could explain why VotingEnsemble performed better 
 
 Relatively simple relationships: VotingEnsemble often excels when the relationships between features and the target variable are reasonably straightforward. It can effectively combine diverse model predictions in such cases.
 Limited dataset size: Stacking might benefit more from larger datasets to achieve optimal meta-model training. If your dataset is relatively small, VotingEnsemble might be less prone to overfitting.
+
 2. Model Diversity and Strength:
 
 Diverse individual models: VotingEnsemble benefits from having a set of individual models that make different types of errors. This diversity can lead to better combined performance.
 Similarly strong individual models: If the individual models in the ensemble have relatively similar performance levels, VotingEnsemble might be sufficient for effective aggregation.
+
 3. Meta-Model Choice in Stacking:
 
 Suboptimal meta-model: The performance of StackEnsemble heavily relies on the meta-model's ability to learn how to best combine the base model predictions. If the chosen meta-model isn't well-suited to the task, it could limit performance.
+
 4. Hyperparameter Tuning:
 
 Tuning for StackEnsemble: Stacking often involves more hyperparameters to tune, including those for the base models and the meta-model. If hyperparameter tuning wasn't as thorough for StackEnsemble, it might not have reached its full potential.
+
 Additional Considerations:
 
 Experiment timeout: If the experiment timeout limited the exploration of different stacking configurations, VotingEnsemble might have had an advantage.
+
 Cross-validation folds: The specific cross-validation folds used could have impacted model performance, potentially favoring VotingEnsemble in this particular run.
 
 
@@ -252,21 +264,27 @@ Here's a breakdown of the HyperDriveConfig settings in Azure AutoML SDK:
 1. estimator:
 
 This specifies the base estimator or machine learning algorithm that will be used for hyperparameter tuning. It's the model whose hyperparameters will be explored to find the best configuration.
+
 2. hyperparameter_sampling:
 
 This defines the method for sampling different hyperparameter combinations during the tuning process. Common options include random sampling, grid search, or Bayesian optimization.
+
 3. policy:
 
 This sets the early termination policy, which allows for stopping poorly performing runs early to save time and resources. The early_termination_policy variable likely holds a specific early stopping configuration.
+
 4. primary_metric_name:
 
 This identifies the key metric that will be used to evaluate and compare different hyperparameter combinations. In this case, it's set to "Accuracy."
+
 5. primary_metric_goal:
 
 This specifies whether the goal is to maximize or minimize the primary metric. Here, PrimaryMetricGoal.MAXIMIZE means the tuning process will aim to find hyperparameters that produce the highest possible accuracy.
+
 6. max_total_runs:
 
 This sets the maximum number of hyperparameter tuning runs that will be executed. The tuning process will stop after completing 10 runs.
+
 7. max_concurrent_runs:
 
 This controls the maximum number of runs that can execute concurrently. Allowing for 4 concurrent runs can potentially speed up the tuning process by leveraging multiple compute resources.
